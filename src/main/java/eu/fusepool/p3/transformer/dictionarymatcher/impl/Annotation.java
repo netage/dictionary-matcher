@@ -16,6 +16,7 @@ public class Annotation {
     String label;
     String prefLabel;
     String altLabel;
+    String notation;
     String uri;
     String type;
     String beforeText;
@@ -87,6 +88,10 @@ public class Annotation {
 
     public String getAltLabel() {
         return altLabel;
+    }
+    
+    public String getNotation() {
+        return notation;
     }
 
     /**

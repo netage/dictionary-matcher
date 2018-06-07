@@ -60,6 +60,26 @@ public class Reader {
 					dictionary.addOriginalElement(label, SKOS.altLabel, s.asNode().getURI().toString());
 				}
 			}
+			
+			// getting notations
+			Iterator<RDFNode> notationTriples = model.listObjectsOfProperty(s.asResource(), SKOS.notation);
+			while (notationTriples.hasNext()) {
+				RDFNode object = notationTriples.next();
+				if (object.isLiteral()) {
+					label = object.asLiteral().getLexicalForm();
+					lang = object.asLiteral().getLanguage() == null ? null : object.asLiteral().getLanguage().toString();
+				} else if (object.asLiteral().getDatatypeURI().equals(XSD.xstring)) {
+					label = object.asLiteral().getLexicalForm();
+					lang = null;
+				} else {
+					label = null;
+					lang = null;
+				}
+
+				if (StringUtils.isNotBlank(label) && StringUtils.isNotBlank(object.asLiteral().getString())) {
+					dictionary.addOriginalElement(label, SKOS.notation, s.asNode().getURI().toString());
+				}
+			}
 		}
 		return dictionary;
 	}

@@ -138,9 +138,13 @@ public class Extractor {
 					if (concept.isPrefLabel()) {
 						entity.prefLabel = concept.labelText;
 						entity.altLabel = null;
-					} else {
+					} else if(concept.isAltLabel()){
 						entity.prefLabel = dictionary.getPrefLabel(entity.getUri());
 						entity.altLabel = concept.labelText;
+					}else{
+						entity.prefLabel = dictionary.getPrefLabel(entity.getUri());
+						entity.altLabel = null;
+						entity.notation = concept.labelText;
 					}
 
 					entity.type = concept.type;

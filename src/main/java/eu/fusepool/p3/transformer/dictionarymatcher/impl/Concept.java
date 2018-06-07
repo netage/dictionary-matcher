@@ -39,6 +39,10 @@ public class Concept {
     public Boolean isAltLabel() {
         return SKOS.altLabel.equals(labelType);
     }
+    
+    public Boolean isNotation() {
+        return SKOS.notation.equals(labelType);
+    }
 
     @Override
     public String toString() {
