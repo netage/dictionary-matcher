@@ -12,6 +12,9 @@ public class Cache {
 
     private static final Map<String, CachedTaxonomy> taxonomyCache = new HashMap<>();
 
+    public static void clearCache(){
+    	taxonomyCache.clear();
+    }
     /**
      * Registers a taxonomy instance.
      *
