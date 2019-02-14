@@ -1,7 +1,6 @@
 package eu.fusepool.p3.transformer.dictionarymatcher.impl;
 
 import java.util.List;
-import org.apache.clerezza.rdf.ontologies.SKOS04;
 import org.apache.jena.vocabulary.SKOS;
 
 /**

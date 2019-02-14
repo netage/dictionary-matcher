@@ -8,26 +8,18 @@ import eu.fusepool.p3.transformer.dictionarymatcher.impl.DictionaryStore;
 import eu.fusepool.p3.transformer.dictionarymatcher.impl.Extractor;
 import eu.fusepool.p3.transformer.dictionarymatcher.impl.Reader;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URI;
-import java.net.URLConnection;
-import java.nio.charset.StandardCharsets;
-
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.vocabulary.RDF;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 /**
